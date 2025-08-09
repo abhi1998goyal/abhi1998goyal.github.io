@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Portfolio of Abhishek Goyal – AI/ML Engineer. About, projects, education, experience, and achievements." />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@700&display=swap" rel="stylesheet">
+  <title>Abhishek Goyal | Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { darkMode:'class' };</script>
+  <style>
+    html { scroll-behavior: smooth; }
+    section[id] { scroll-margin-top: 96px; }
+    .fade-in { opacity: 0; transform: translateY(6px); animation: fade .5s ease forwards; }
+    @keyframes fade { to { opacity: 1; transform: none; } }
+    .ai-canvas-wrap { position: relative; }
+    
+    #aiCanvas { 
+      position:absolute; 
+      inset:0; 
+      width:100%; 
+      height:100%; 
+      display:block; 
+    }
+
+    @media (prefers-reduced-motion: reduce) { #aiCanvas { display: none !important; } }
+
+    /* Hide scrollbar but allow scrolling */
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none;  scrollbar-width: none; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-900 dark:bg-gray-950 dark:text-gray-100">
+  <header class="sticky top-0 z-30 backdrop-blur bg-white/80 dark:bg-gray-950/70 border-b border-gray-200 dark:border-gray-800">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="#home" title="Home" lang="hi" class="inline-flex items-center text-gray-900 dark:text-white">
+        <span style="font-family:'Noto Sans Devanagari', sans-serif; font-weight:700; font-size:1.75rem; line-height:1;">
+          &#x0905;&#x092D;&#x093F;
+        </span>
+      </a>
+      <nav class="flex gap-6 text-sm" aria-label="Primary">
+        <a href="#about" class="hover:text-blue-600">About</a>
+        <a href="#projects" class="hover:text-blue-600">Projects</a>
+        <a href="#education" class="hover:text-blue-600">Education</a>
+        <a href="#experience" class="hover:text-blue-600">Experience</a>
+        <a href="#achievements" class="hover:text-blue-600">Achievements</a>
+        <a href="#contact" class="hover:text-blue-600">Contact</a>
+      </nav>
+      <button id="themeToggle" class="text-sm border px-3 py-1.5 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-900">🌙</button>
+    </div>
+  </header>
+
+  <section id="home" class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-indigo-900 to-blue-700"></div>
+    <div class="relative max-w-6xl mx-auto px-4 py-10 md:py-12 grid grid-cols-[auto,1fr] md:grid-cols-[auto,1fr,420px] gap-x-6 gap-y-8 items-center text-white">
+      
+      <img src="assets/profile_4.jpg" alt="Abhishek Goyal"
+           class="w-32 h-32 md:w-48 md:h-48 rounded-full shadow-xl object-cover bg-white/10"
+           onerror="this.style.display='none'" />
+      
+      <div>
+        <h1 class="text-3xl md:text-4xl font-bold leading-tight fade-in">Abhishek Goyal</h1>
+
+        <p class="mt-3 text-lg md:text-xl text-indigo-100 fade-in" style="animation-delay:.06s">
+          AI Developer
+        </p>
+
+        <button id="copyEmailBtn" type="button" class="mt-4 inline-flex items-center text-indigo-100 hover:text-white transition-colors fade-in break-all text-left" style="animation-delay:.12s">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+            </svg>
+            <span id="emailText">abhishek.goyal.ai.dev@gmail.com</span>
+        </button>
+      </div>
+
+      <div class="ai-canvas-wrap h-32 w-full rounded-2xl col-span-2 md:col-auto">
+        <canvas id="aiCanvas"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="py-14 bg-white dark:bg-gray-950">
+    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-8 items-start">
+      <div>
+        <h2 class="text-2xl md:text-3xl font-semibold">About</h2>
+        <p class="mt-3 text-gray-700 dark:text-gray-300 leading-relaxed">I’m Abhishek Goyal, an AI engineer with an M.Tech in AI from IIT Delhi. Previously, I worked at Stonewain Systems (an EquiLend company) as a senior Java developer, building back-office applications for the US money market. With my experience in scalable applications and AI, I don't just train models; I build intelligent systems. My areas of interest include Reinforcement Learning, scalable AI systems, mechanistic interpretability of LLMs, and foundation models.</p>
+        <ul class="mt-4 text-sm text-gray-700 dark:text-gray-300 space-y-2">
+          <li>• <strong>Recently</strong>: Integrating GenAI into a smart marketing application at PayU Innovations.</li>
+          <li>• <strong>Previously</strong>: As part of my Master's thesis, I built a vision foundation model using DINO on histopathology, primarily for its advantages in spatial transcriptomics.</li>
+          <li>• <strong>Note</strong>: Feel free to email me to collaborate on new ideas or for freelance and job opportunities.</li>
+        </ul>
+        <div class="mt-5 flex gap-3">
+          <a href="#projects" class="px-4 py-2 rounded-xl bg-blue-600 text-white">See projects</a>
+          <a href="#experience" class="px-4 py-2 rounded-xl border dark:border-gray-700">Work experience</a>
+        </div>
+      </div>
+      <div class="p-5 rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950">
+        <h3 class="font-medium">Summary</h3>
+        <dl class="mt-3 grid grid-cols-2 gap-3 text-sm">
+          <div><dt class="text-gray-500 dark:text-gray-400">Education</dt><dd class="font-medium">M.Tech AI (IIT Delhi)</dd></div>
+          <div><dt class="text-gray-500 dark:text-gray-400">Focus</dt><dd class="font-medium">Intelligent Applications (Embedding scalable and cost-effective AI into legacy applications)</dd></div>
+          <div><dt class="text-gray-500 dark:text-gray-400">Development Experience (2.5+ yrs)</dt><dd class="font-medium">Securities Finance · Intelligent Marketing</dd></div>
+          <div><dt class="text-gray-500 dark:text-gray-400">Tooling</dt><dd class="font-medium">Java · Python · SQL · AWS · PyTorch · Django · Spring Boot</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="py-14 bg-white dark:bg-gray-950">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-semibold">Projects</h2>
+      
+      <div class="relative">
+        <div id="projectsContainer" class="mt-8 flex gap-6 overflow-x-auto pb-4 no-scrollbar" style="scroll-behavior: smooth;">
+          
+          <article class="p-5 rounded-2xl border border-gray-200 dark:border-gray-800 hover:shadow-lg transition flex-shrink-0 w-80">
+            <h3 class="font-semibold text-lg">Expected Maximization (Bayesian Networks)</h3>
+            <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">Learning the parameters of a Bayesian network for disease diagnosis.</p>
+            <div class="mt-4 flex gap-2 text-sm">
+              <a href="https://github.com/abhi1998goyal/COL-333-AI/tree/main/Assignment%204" class="px-3 py-1.5 rounded-lg bg-blue-600 text-white">GitHub</a>
+            </div>
+          </article>
+  
+          <article class="p-5 rounded-2xl border border-gray-200 dark:border-gray-800 hover:shadow-lg transition flex-shrink-0 w-80">
+            <h3 class="font-semibold text-lg">Graph Partitioning using RL</h3>
+            <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">Solving graph partitioning using PPO to achieve a lower normalized-cut objective.</p>
+            <div class="mt-4 flex gap-2 text-sm">
+              <a href="https://github.com/abhi1998goyal/AIL-821-Advanced_RL/tree/main/ASS_2" class="px-3 py-1.5 rounded-lg bg-blue-600 text-white">GitHub</a>
+            </div>
+          </article>
+  
+          <article class="p-5 rounded-2xl border border-gray-200 dark:border-gray-800 hover:shadow-lg transition flex-shrink-0 w-80">
+            <h3 class="font-semibold text-lg">Vision Foundation Model for Histopathology</h3>
+            <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">Built a foundation model using DINO on histopathology images for use in spatial transcriptomics.</p>
+            <div class="mt-4 flex gap-2 text-sm">
+              <a href="#" class="px-3 py-1.5 rounded-lg bg-blue-600 text-white">Confidential</a>
+            </div> 
+          </article>   
+  
+          <article class="p-5 rounded-2xl border border-gray-200 dark:border-gray-800 hover:shadow-lg transition flex-shrink-0 w-80">
+            <h3 class="font-semibold text-lg">Hate Meme Classification</h3>
+            <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">Classification of textual and visual data using multimodal models.</p>
+            <div class="mt-4 flex gap-2 text-sm">
+              <a href="https://drive.google.com/file/d/1TEtwa4s2cmy5-ocOpxTuDUfToFlFzLAe/view?usp=sharing" class="px-3 py-1.5 rounded-lg bg-blue-600 text-white">GitHub</a>
+            </div> 
+          </article> 
+        </div>
+
+        <button id="scrollLeftBtn" class="hidden md:flex absolute top-1/2 -translate-y-1/2 left-0 -translate-x-1/2 z-10 bg-white/80 dark:bg-gray-950/70 backdrop-blur-sm h-12 w-12 rounded-full items-center justify-center shadow-md hover:bg-gray-200 dark:hover:bg-gray-800 transition">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+        </button>
+        <button id="scrollRightBtn" class="hidden md:flex absolute top-1/2 -translate-y-1/2 right-0 translate-x-1/2 z-10 bg-white/80 dark:bg-gray-950/70 backdrop-blur-sm h-12 w-12 rounded-full items-center justify-center shadow-md hover:bg-gray-200 dark:hover:bg-gray-800 transition">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section id="education" class="py-14 bg-gray-50 dark:bg-gray-900">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-semibold">Education</h2>
+      <div class="mt-6 grid md:grid-cols-2 gap-6">
+        <article class="p-5 rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950">
+          <h3 class="font-semibold text-lg">M.Tech. in Machine Intelligence & Data Science (MINDS)</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-300">Indian Institute of Technology Delhi • CGPA: <strong>8.85/10</strong></p>
+          <h4 class="mt-3 font-medium">Key Subjects</h4>
+          <ul class="mt-2 list-disc list-inside text-sm text-gray-700 dark:text-gray-300">
+            <li>Deep Learning for NLP</li>
+            <li>Reinforcement Learning</li>
+            <li>Advanced Computer Vision</li>
+            <li>Mechanistic Interpretability of LLMs</li>
+            <li>Data Mining</li>
+            <li>Social Network Analysis</li>
+            <li>Stochastic Processes</li>
+          </ul>
+        </article>
+        <article class="p-5 rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950">
+          <h3 class="font-semibold text-lg">B.E. in Electronics & Computer Engineering</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-300">Thapar Institute of Engineering & Technology • CGPA: <strong>9.63/10</strong></p>
+          <h4 class="mt-3 font-medium">Key Subjects</h4>
+          <ul class="mt-2 list-disc list-inside text-sm text-gray-700 dark:text-gray-300">
+            <li>Digital Signal Processing</li>
+            <li>Operating Systems</li>
+            <li>Database Management Systems</li>
+            <li>Machine Learning</li>
+            <li>Computer Architecture</li>
+            <li>Data Structures & Algorithms</li>
+            <li>Digital & Analog Communication</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" class="py-14">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-semibold">Experience</h2>
+      <div class="mt-6 space-y-6">
+        <article class="p-5 rounded-2xl border border-gray-200 dark:border-gray-800">
+          <div class="flex items-center justify-between">
+            <h3 class="font-semibold text-lg">PayU Innovations (Data Science Vertical of PayU)</h3>
+            <span class="text-sm text-gray-500">June 2025 – Present</span>
+          </div>
+          <p class="text-sm text-gray-600 dark:text-gray-300">Data Engineer • Python, Django, Celery, Redis, AWS, Claude, PySpark</p>
+          <ul class="mt-2 list-disc list-inside text-sm text-gray-700 dark:text-gray-300">
+            <li>Data/ML engineering for an intelligent marketing application (Statica).</li>
+          </ul>
+        </article>
+        <article class="p-5 rounded-2xl border border-gray-200 dark:border-gray-800">
+          <div class="flex items-center justify-between">
+            <h3 class="font-semibold text-lg">Functional Genomics Lab (IIT Delhi)</h3>
+            <span class="text-sm text-gray-500">June 2023 – June 2025</span>
+          </div>
+          <p class="text-sm text-gray-600 dark:text-gray-300">AI Researcher • Advanced Computer Vision, AI for Healthcare in India</p>
+          <ul class="mt-2 list-disc list-inside text-sm text-gray-700 dark:text-gray-300">
+            <li>Addressing the urgent need for India-specific healthcare foundation models.</li>
+            <li>Presented a state-of-the-art (SOTA) foundation model for histopathology.</li>
+            <li>Developed a supervised model based on Dynamic Deformable Convolution (DDConv).</li>
+          </ul>
+        </article>
+        <article class="p-5 rounded-2xl border border-gray-200 dark:border-gray-800">
+          <div class="flex items-center justify-between">
+            <h3 class="font-semibold text-lg">Stonewain Systems, an EquiLend Company</h3>
+            <span class="text-sm text-gray-500">Dec 2021 – Apr 2022</span>
+          </div>
+          <p class="text-sm text-gray-600 dark:text-gray-300">Senior Development Engineer • Java, Apache Camel, Spring Boot</p>
+          <ul class="mt-2 list-disc list-inside text-sm text-gray-700 dark:text-gray-300">
+            <li>Reduced memory leaks by ~10% using VisualVM profiling, improving application stability.</li>
+            <li>Led the migration of a monolith application to microservices, cutting code redundancy by over 30%.</li>
+            <li>Implemented dynamic code updates on a running context, halving deployment downtime.</li>
+            <li>Collaborated with the US team on code reviews to ensure high-quality software development.</li>
+          </ul>
+        </article>
+        <article class="p-5 rounded-2xl border border-gray-200 dark:border-gray-800">
+          <div class="flex items-center justify-between">
+            <h3 class="font-semibold text-lg">Stonewain Systems, an EquiLend Company</h3>
+            <span class="text-sm text-gray-500">Jul 2020 – Nov 2021</span>
+          </div>
+          <p class="text-sm text-gray-600 dark:text-gray-300">Software Developer • Java, Spring Boot, Kafka</p>
+          <ul class="mt-2 list-disc list-inside text-sm text-gray-700 dark:text-gray-300">
+            <li>Engineered a secure SFTP module with a file cache, improving transfer reliability during shutdowns.</li>
+            <li>Overhauled the securities parsing and pricing flow, significantly improving data ingestion time in SQL procedures.</li>
+            <li>Managed the successful upgrade of the codebase from Apache Camel 2.7 to 3.0.</li>
+          </ul>
+        </article>
+        <article class="p-5 rounded-2xl border border-gray-200 dark:border-gray-800">
+          <div class="flex items-center justify-between">
+            <h3 class="font-semibold text-lg">Stonewain Systems, an EquiLend Company</h3>
+            <span class="text-sm text-gray-500">Jan 2020 – Jul 2020</span>
+          </div>
+          <p class="text-sm text-gray-600 dark:text-gray-300">Software Development Intern • Java, Spring Boot, PL/SQL</p>
+          <ul class="mt-2 list-disc list-inside text-sm text-gray-700 dark:text-gray-300">
+            <li>Developed key enterprise integration features for securities finance platforms.</li>
+            <li>Resolved a long-standing data loading bug that caused field mismatches during data import.</li>
+            <li>Identified and fixed a critical bug related to US time zone conversions and Daylight Saving Time adjustments.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="achievements" class="py-14 bg-gray-50 dark:bg-gray-900">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-semibold text-center">Achievements</h2>
+      <div class="mt-8 space-y-6">
+        <div class="relative pl-6 fade-in"><span class="absolute left-0 top-1.5 h-3 w-3 rounded-full bg-blue-600"></span><div class="text-sm text-gray-500 dark:text-gray-400">2025</div><div>Presented a novel foundation model for Histopathology in my M.Tech thesis at IIT Delhi.</div></div>
+        <div class="relative pl-6 fade-in" style="animation-delay:80ms"><span class="absolute left-0 top-1.5 h-3 w-3 rounded-full bg-blue-600"></span><div class="text-sm text-gray-500 dark:text-gray-400">2024</div><div>Reliance Foundation Scholar 2023 (Selected as one of 100 postgraduate students in India based on merit).</div></div>
+        <div class="relative pl-6 fade-in" style="animation-delay:160ms"><span class="absolute left-0 top-1.5 h-3 w-3 rounded-full bg-blue-600"></span><div class="text-sm text-gray-500 dark:text-gray-400">2023</div><div>Achieved All India Rank 120 in GATE CSE 2023.</div></div>
+        <div class="relative pl-6 fade-in" style="animation-delay:160ms"><span class="absolute left-0 top-1.5 h-3 w-3 rounded-full bg-blue-600"></span><div class="text-sm text-gray-500 dark:text-gray-400">2022</div><div>Promoted to Senior Java Developer at EquiLend.</div></div>
+        <div class="relative pl-6 fade-in" style="animation-delay:160ms"><span class="absolute left-0 top-1.5 h-3 w-3 rounded-full bg-blue-600"></span><div class="text-sm text-gray-500 dark:text-gray-400">2020</div><div>Awarded the Thapar University Merit Scholarship for four consecutive years.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="py-16">
+    <div class="max-w-3xl mx-auto px-4 text-center">
+      <h2 class="text-2xl md:text-3xl font-semibold">Get in Touch</h2>
+      <div class="mt-6 flex flex-wrap justify-center gap-3">
+        <a href="mailto:abhishek.goyal.ai.dev@gmail.com" class="px-4 py-2 rounded-xl border dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-900">Email</a>
+        <a href="https://www.linkedin.com/in/abhishek-goyal-iitd/" target="_blank" class="px-4 py-2 rounded-xl border dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-900">LinkedIn</a>
+        <a href="https://github.com/abhi1998goyal" target="_blank" class="px-4 py-2 rounded-xl border dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-900">GitHub</a>
+      </div>
+    </div>
+  </section>
+  <footer class="py-8 text-center text-sm text-gray-500 dark:text-gray-400">© 2025 Abhishek Goyal</footer>
+
+  <script>
+    // Dark mode toggle
+    const root = document.documentElement;
+    const saved = localStorage.getItem('theme');
+    if (saved !== 'light') {
+      root.classList.add('dark');
+    }
+    document.getElementById('themeToggle').addEventListener('click', () => {
+      root.classList.toggle('dark');
+      localStorage.setItem('theme', root.classList.contains('dark') ? 'dark' : 'light');
+    });
+
+    // Script for copy-to-clipboard
+    const copyBtn = document.getElementById('copyEmailBtn');
+    const emailTextSpan = document.getElementById('emailText');
+    const emailToCopy = 'abhishek.goyal.ai.dev@gmail.com';
+
+    copyBtn.addEventListener('click', () => {
+        navigator.clipboard.writeText(emailToCopy).then(() => {
+            emailTextSpan.textContent = 'Copied!';
+            setTimeout(() => {
+                emailTextSpan.textContent = emailToCopy;
+            }, 2000);
+        }).catch(err => {
+            console.error('Failed to copy email: ', err);
+        });
+    });
+    
+    // Script for project scroller arrows
+    const projectsContainer = document.getElementById('projectsContainer');
+    const scrollLeftBtn = document.getElementById('scrollLeftBtn');
+    const scrollRightBtn = document.getElementById('scrollRightBtn');
+
+    if (projectsContainer) {
+      const scrollAmount = 344; // Width of one card (w-80 = 320px) + gap (gap-6 = 24px)
+
+      scrollLeftBtn.addEventListener('click', () => {
+        projectsContainer.scrollLeft -= scrollAmount;
+      });
+
+      scrollRightBtn.addEventListener('click', () => {
+        projectsContainer.scrollLeft += scrollAmount;
+      });
+    }
+
+    // Constellation animation
+    (function() {
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const canvas = document.getElementById('aiCanvas');
+      if (!canvas || prefersReduced) return;
+
+      const ctx = canvas.getContext('2d');
+      const wrap = canvas.parentElement; 
+      let dpr = window.devicePixelRatio || 1;
+      let width = 0, height = 0;
+      let nodes = [];
+      let t = 0;
+
+      const NODE_COUNT = 80;
+      const LINK_DIST = 130;
+      const rand = (min, max) => Math.random() * (max - min) + min;
+
+      function sizeCanvas() {
+        const r = wrap.getBoundingClientRect();
+        canvas.width = Math.max(1, Math.floor(r.width * dpr));
+        canvas.height = Math.max(1, Math.floor(r.height * dpr));
+        width = r.width; height = r.height;
+      }
+
+      function spawnNodes() {
+        nodes = Array.from({ length: NODE_COUNT }, () => ({
+          x: rand(0, width), y: rand(0, height),
+          vx: rand(-0.25, 0.25), vy: rand(-0.25, 0.25), r: rand(1.1, 2.2)
+        }));
+      }
+
+      function update() {
+        for (const n of nodes) {
+          n.x += n.vx; n.y += n.vy;
+          if (n.x < 0 || n.x > width) n.vx *= -1;
+          if (n.y < 0 || n.y > height) n.vy *= -1;
+          n.x = Math.max(0, Math.min(width, n.x));
+          n.y = Math.max(0, Math.min(height, n.y));
+        }
+      }
+
+      function draw() {
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        ctx.clearRect(0, 0, width, height);
+        ctx.lineWidth = 1; ctx.setLineDash([14,18]); ctx.lineDashOffset = -t * 26;
+        for (let i = 0; i < nodes.length; i++) {
+          const a = nodes[i];
+          for (let j = i + 1; j < nodes.length; j++) {
+            const b = nodes[j];
+            const dx = a.x - b.x, dy = a.y - b.y; const d = Math.hypot(dx, dy);
+            if (d < LINK_DIST) {
+              const alpha = 1 - d / LINK_DIST;
+              ctx.strokeStyle = `rgba(180,210,255,${0.18 * alpha})`;
+              ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+            }
+          }
+        }
+        ctx.setLineDash([]);
+        for (const n of nodes) {
+          const g = ctx.createRadialGradient(n.x, n.y, 0, n.x, n.y, Math.max(6, n.r * 6));
+          g.addColorStop(0, 'rgba(255,255,255,0.95)'); g.addColorStop(1, 'rgba(120,180,255,0)');
+          ctx.fillStyle = g; ctx.beginPath(); ctx.arc(n.x, n.y, Math.max(2, n.r * 2), 0, Math.PI * 2); ctx.fill();
+        }
+        t += 0.016;
+      }
+
+      function frame() { update(); draw(); requestAnimationFrame(frame); }
+
+      function reflow() { dpr = window.devicePixelRatio || 1; sizeCanvas(); spawnNodes(); }
+
+      // Initialize
+      setTimeout(() => {
+        reflow(); 
+        frame();
+      }, 50);
+
+      window.addEventListener('resize', reflow);
+    })();
+  </script>
+</body>
+</html>
